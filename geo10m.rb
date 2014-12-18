@@ -1,6 +1,5 @@
 #! /usr/bin/env ruby
 
-
 class GeoCode
   PI = Math.acos(-1.0)
 
@@ -24,8 +23,8 @@ class GeoCode
 
 
   def self.encode(latitude, longitude)
-    lat = ((latitude + 90.0) * 10000).to_i
-    lon = ((longitude + 180.0) * 10000 * Math.cos(PI * latitude / 180.0)).to_i
+    lat = ((latitude + 90.0) * 10000 + 0.5).to_i
+    lon = ((longitude + 180.0) * 10000 * Math.cos(PI * latitude / 180.0) + 0.5).to_i
     lon_s = lon.to_s(36)
     lat_s = lat.to_s(36)
     cs = self.checksum(lat_s, lon_s)
