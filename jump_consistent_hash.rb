@@ -1,4 +1,7 @@
 class JumpConsistentHash
+  # Implements jump consistent hash
+  # from http://arxiv.org/ftp/arxiv/papers/1406/1406.2294.pdf
+
   def initialize(n)
     @buckets = n
   end
