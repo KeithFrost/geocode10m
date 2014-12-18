@@ -11,7 +11,7 @@ class JumpConsistentHash
   B64 = (1 << 64) - 1
 
   def bucket(key)
-    b = -1
+    b = nil
     j = 0
     while j < @buckets
       b = j
